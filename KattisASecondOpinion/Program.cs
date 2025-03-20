@@ -10,11 +10,16 @@ namespace KattisASecondOpinion
             try
             {
                 int input = int.Parse(Console.ReadLine());
-                int hours = input / (60 * 60);
-                int minutes = (input / 60) % 60;
-                int seconds = input % 60;
-                Console.WriteLine();
-                Console.WriteLine("{0}:{1}:{2}", hours, minutes, seconds);
+                if (input < 0 || input > 1000000) Console.WriteLine("Input not within boundaries >= 0 and <= 1000000");
+                else 
+                {
+                    int hours = input / (60 * 60);
+                    int minutes = (input / 60) % 60;
+                    int seconds = input % 60;
+                    Console.WriteLine();
+                    Console.WriteLine("{0}:{1}:{2}", hours, minutes, seconds);
+                }
+                
             }
             catch 
             {
